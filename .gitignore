@@ -1,0 +1,11 @@
+# Lingkungan Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Kredensial Sensitif
+.env
+
+# Sesi Lokal (jika ada yang tersimpan lokal)
+.nexus_sessions/
