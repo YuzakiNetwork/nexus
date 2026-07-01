@@ -1,11 +1,10 @@
-# Lingkungan Python
-venv/
-.venv/
-__pycache__/
-*.pyc
-
-# Kredensial Sensitif
 .env
-
-# Sesi Lokal (jika ada yang tersimpan lokal)
-.nexus_sessions/
+.nexus/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
