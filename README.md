@@ -162,12 +162,30 @@ Semua akses file dibatasi ke `--workspace`.
 Taruh file Markdown di `.nexus/skills/*.md`. Isi skill akan masuk ke system prompt.
 Skill global bisa ditaruh di `~/.config/nexus-cli/skills/*.md` dan berlaku untuk semua proyek.
 
-Contoh:
+### Skill yang terpasang otomatis
 
-```markdown
+| File | Sumber | Fungsi |
+|------|--------|--------|
+| `core.md` | installer | Pedoman kerja coding agent |
+| `terminal.md` | installer | Cara pakai `shell_command` |
+| `browser.md` | installer | Cara pakai `open_browser` |
+| `ponytail.md` | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) (MIT) | Lazy coding: YAGNI → stdlib → native → one-liner |
+| `ponytail-review.md` | same | Format review over-engineering untuk diff |
+
+Ponytail membantu agen menulis kode seminimal mungkin sambil tetap
+menjaga validation, error handling, dan security. Lihat
+[repo upstream](https://github.com/DietrichGebert/ponytail) untuk benchmark
+dan skill tambahan (audit/debt/gain/help).
+
+### Tambah skill sendiri
+
+```bash
+mkdir -p .nexus/skills
+cat > .nexus/skills/python-style.md <<'EOF'
 # Python Style
 
 Selalu jalankan `python -m compileall` setelah mengubah file Python.
+EOF
 ```
 
 ## Memory

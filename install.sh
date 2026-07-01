@@ -68,6 +68,18 @@ if [ ! -f "$SKILLS_DIR/browser.md" ]; then
 EOF
 fi
 
+# Skill pihak ketiga yang disertakan di repo (MIT, lihat THIRD_PARTY.md):
+# - vendor/ponytail/ponytail.md
+# - vendor/ponytail/ponytail-review.md
+# di-copy ke skill global saat install pertama atau upgrade.
+for skill in ponytail ponytail-review; do
+  src="$PROJECT_DIR/vendor/ponytail/$skill.md"
+  dst="$SKILLS_DIR/$skill.md"
+  if [ -f "$src" ]; then
+    cp "$src" "$dst"
+  fi
+done
+
 case ":$PATH:" in
   *":$BIN_DIR:"*) ;;
   *)
